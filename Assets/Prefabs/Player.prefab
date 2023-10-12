@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3893124231819799197}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ground Check
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,9 +43,9 @@ GameObject:
   - component: {fileID: 8202858246601892225}
   - component: {fileID: 3744892092189701416}
   - component: {fileID: 9184779252053084311}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Backpack
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,9 +148,9 @@ GameObject:
   - component: {fileID: 2262617930789878225}
   - component: {fileID: 6651056412234033618}
   - component: {fileID: 6699525119245808294}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerCamera
-  m_TagString: MainCamera
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 3794796030896099010}
   - component: {fileID: 9206747320048335265}
   - component: {fileID: 470144613906738629}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -390,7 +390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2f3d3e129896204cbcf4ecc342bacbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnOffsetPosition: {x: 0, y: 2, z: 0}
+  spawnOffsetPosition: {x: 0, y: 2, z: 2}
 --- !u!1 &5231629834093616286
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,9 +402,9 @@ GameObject:
   - component: {fileID: 1521826050237156505}
   - component: {fileID: 6129258757325369038}
   - component: {fileID: 8632850601738548998}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Eyes
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
