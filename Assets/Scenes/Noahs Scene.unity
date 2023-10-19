@@ -1592,8 +1592,7 @@ MonoBehaviour:
   joystickOutputEvent:
     m_PersistentCalls:
       m_Calls:
-      - {m_Target: {fileID: 1645983387}, m_TargetAssemblyTypeName: StarterAssets.UICanvasControllerInput, Assembly-CSharp, m_MethodName: VirtualMoveInput, m_Mode: 0, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-    m_CallsDirty: 1
+      - {m_Target: {fileID: 1645983387}, m_TargetAssemblyTypeName: StarterAssets.UICanvasControllerInput, Assembly-CSharp: }
 --- !u!114 &833547008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1692,8 +1691,7 @@ MonoBehaviour:
   joystickOutputEvent:
     m_PersistentCalls:
       m_Calls:
-      - {m_Target: {fileID: 1645983387}, m_TargetAssemblyTypeName: StarterAssets.UICanvasControllerInput, Assembly-CSharp, m_MethodName: VirtualLookInput, m_Mode: 0, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-    m_CallsDirty: 1
+      - {m_Target: {fileID: 1645983387}, m_TargetAssemblyTypeName: StarterAssets.UICanvasControllerInput, Assembly-CSharp: }
 --- !u!114 &841892187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2787,12 +2785,7 @@ MonoBehaviour:
   buttonStateOutputEvent:
     m_PersistentCalls:
       m_Calls:
-      - {m_Target: {fileID: 1645983387}, m_TargetAssemblyTypeName: StarterAssets.UICanvasControllerInput, Assembly-CSharp, m_MethodName: VirtualSprintInput, m_Mode: 0, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-    m_CallsDirty: 1
-  buttonClickOutputEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
+      - {m_Target: {fileID: 1645983387}, m_TargetAssemblyTypeName: StarterAssets.UICanvasControllerInput, Assembly-CSharp: }
 --- !u!114 &1173249050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9926,12 +9919,7 @@ MonoBehaviour:
   buttonStateOutputEvent:
     m_PersistentCalls:
       m_Calls:
-      - {m_Target: {fileID: 1645983387}, m_TargetAssemblyTypeName: StarterAssets.UICanvasControllerInput, Assembly-CSharp, m_MethodName: VirtualJumpInput, m_Mode: 0, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-    m_CallsDirty: 1
-  buttonClickOutputEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
+      - {m_Target: {fileID: 1645983387}, m_TargetAssemblyTypeName: StarterAssets.UICanvasControllerInput, Assembly-CSharp: }
 --- !u!114 &1947334516
 MonoBehaviour:
   m_ObjectHideFlags: 0
