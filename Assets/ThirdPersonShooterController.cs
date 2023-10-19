@@ -8,13 +8,18 @@ public class ThirdPersonShooterController : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera aimVirtualCamera;
 
+    [Header("Sensitivity + else")]
     [SerializeField] private float normalCameraSensitivity;
     [SerializeField] private float aimCameraSensitivity;
 
-    [SerializeField] private float weaponDamage = 3f;
-
     [SerializeField] private LayerMask aimColliderLayerMask = new LayerMask();
     [SerializeField] private Transform debugTransform;
+
+    [Header("Shooting")]
+    [SerializeField] private float weaponDamage = 3f;
+
+    [SerializeField] float shootingWaitTime = 1f;
+    [SerializeField] bool canShoot;
 
     [SerializeField] private Transform vfxHitGreen;
     [SerializeField] private Transform vfxHitRed;
@@ -81,4 +86,16 @@ public class ThirdPersonShooterController : MonoBehaviour
         }
 
     }
+
+ /*private IEnumerator TimeUntilCanShoot()  
+    {
+        if(canShoot == false)
+        {
+          //return;
+        }
+        else
+        {
+
+        }
+    }*/
 }
