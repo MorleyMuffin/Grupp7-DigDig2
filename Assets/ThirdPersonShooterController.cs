@@ -70,11 +70,11 @@ public class ThirdPersonShooterController : MonoBehaviour
             {
                 if(hitTransform.GetComponent<EnemyHealth>() != null)
                 {
-                    Instantiate(vfxHitGreen, raycastHit.point, Quaternion.identity); enemyHealth = hitTransform.GetComponent<EnemyHealth>(); enemyHealth.DamageToEnemy(weaponDamage);
+                    Instantiate(vfxHitRed, raycastHit.point, Quaternion.identity); enemyHealth = hitTransform.GetComponent<EnemyHealth>(); enemyHealth.DamageToEnemy(weaponDamage);
                 }
                 else
                 {
-                    Instantiate(vfxHitRed, raycastHit.point, Quaternion.identity);
+                    Instantiate(vfxHitGreen, raycastHit.point, Quaternion.identity);
                 }
             }
             starterAssetInputs.shoot = false;
