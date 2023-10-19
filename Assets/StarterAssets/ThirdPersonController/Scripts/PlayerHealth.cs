@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -9,13 +10,17 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField] bool canTakeDamage = true;
 
+    [SerializeField] Slider healthBar;
+
     private void Start()
     {
         currentHealth = maxHealth;
+        healthBar.maxValue = maxHealth;
     }
 
     private void Update()
     {
+        healthBar.value = currentHealth;
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
