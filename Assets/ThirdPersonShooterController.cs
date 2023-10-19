@@ -11,6 +11,8 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] private float normalCameraSensitivity;
     [SerializeField] private float aimCameraSensitivity;
 
+    [SerializeField] private float weaponDamage = 3f;
+
     [SerializeField] private LayerMask aimColliderLayerMask = new LayerMask();
     [SerializeField] private Transform debugTransform;
 
@@ -19,6 +21,9 @@ public class ThirdPersonShooterController : MonoBehaviour
 
     private ThirdPersonController thirdPersonController;
     private StarterAssetsInputs starterAssetInputs;
+
+    private EnemyHealth enemyHealth;
+    
 
     private void Awake()
     {
@@ -63,13 +68,13 @@ public class ThirdPersonShooterController : MonoBehaviour
         {
             if(hitTransform != null) 
             {
-                if(hitTransform.GetComponent<BulletTarget>() != null)
+                if(hitTransform.GetComponent<EnemyHealth>() != null)
                 {
-                    Instantiate(vfxHitGreen, transform.position, Quaternion.identity);
+                    Instantiate(vfxHitGreen, transform.position, Quaternion.identity); enemyHealth = hitTransform.GetComponent<EnemyHealth>(); enemyHealth.DamageToEnemy(weaponDamage);
                 }
                 else
                 {
-                    Instantiate(vfxHitRed, transform.position, Quaternion.identity);
+                    Instantiate(vfxHitRed, raycastHit.point, Quaternion.identity);
                 }
             }
             starterAssetInputs.shoot = false;
