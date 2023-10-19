@@ -652,6 +652,7 @@ GameObject:
   - component: {fileID: 733109499}
   - component: {fileID: 733109498}
   - component: {fileID: 733109497}
+  - component: {fileID: 733109502}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -757,6 +758,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &733109502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733109496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16f68274e9fd507488fca261441b07ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMaxHealth: 5
+  enemyCurrentHealth: 0
+  canTakeDamage: 1
 --- !u!1001 &851514038
 PrefabInstance:
   m_ObjectHideFlags: 0
