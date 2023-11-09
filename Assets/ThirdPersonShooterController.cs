@@ -53,7 +53,7 @@ public class ThirdPersonShooterController : MonoBehaviour
     {
         currentBulletAmount = maxBullets;
 
-        canShootBar.maxValue = shootingWaitTime; 
+        currentShootingWaitTime = canShootBar.maxValue;
 
         thirdPersonController = GetComponent<ThirdPersonController>();
         starterAssetInputs = GetComponent<StarterAssetsInputs>();
@@ -100,10 +100,12 @@ public class ThirdPersonShooterController : MonoBehaviour
         {
             canShoot = false;
         }
-        if (Input.GetKeyDown(KeyCode.R))// temperary
+        if (Input.GetKeyDown(KeyCode.R) && isShooting == false)// temperary
         {
             currentBulletAmount = maxBullets; // Add loading time to do this
             canShoot = true;
+
+            starterAssetInputs.shoot = false;
         }
 
         if  (starterAssetInputs.shoot && canFire)
@@ -149,6 +151,7 @@ public class ThirdPersonShooterController : MonoBehaviour
             // Interpolate the value using SmoothStep (you can also use Lerp)
             currentShootingWaitTime = Mathf.SmoothStep(0.0f, shootingWaitTime, t);
 
+            starterAssetInputs.shoot = false;
             // Check if shooting time has reached the max
             if (shootingTimer >= shootingWaitTime)
             {
@@ -161,6 +164,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 
 
         canShootBar.value = currentShootingWaitTime;
+        
         #endregion
 
     }
