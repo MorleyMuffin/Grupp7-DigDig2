@@ -121,7 +121,7 @@ public class ThirdPersonShooterController : MonoBehaviour
         {
             canShoot = false;
         }
-        if (Input.GetKeyDown(KeyCode.R) && isShooting == false && canReload == true && currentBulletAmount < maxBullets)// temperary
+        if (starterAssetInputs.reload == true && isShooting == false && canReload == true && currentBulletAmount < maxBullets)// temperary
         {
             
 
@@ -201,6 +201,7 @@ public class ThirdPersonShooterController : MonoBehaviour
     private IEnumerator TimeToReload()
     {
         canReload = false;
+        starterAssetInputs.reload = false;
 
         reloadingDisplay.text = ("Reloading");
         reloadingDisplay.enabled = true;
