@@ -31,14 +31,15 @@ public class ThirdPersonShooterController : MonoBehaviour
 
     [SerializeField] bool canFire = true; // erm isnt this just the same thing as canShoot?
 
+    [SerializeField] float reloadTime = 1.5f;
+    private bool canReload = true;
+    [SerializeField] TextMeshProUGUI reloadingDisplay; // Temporary until sound and animation is added to indicate that reloading is happening.
+
     [SerializeField] int maxBullets = 10;
     [SerializeField] int currentBulletAmount;
-    [SerializeField] TextMeshProUGUI bulletDisplay; // Change to show x amount of bullets instead of text
-
-
+    [SerializeField] TextMeshProUGUI bulletDisplay; // Change to show x amount of bullets instead of text    
 
     [SerializeField] Slider canShootBar;
-    //Ádd bullet amount
 
 
     [SerializeField] private Transform vfxHitGreen;
@@ -51,15 +52,21 @@ public class ThirdPersonShooterController : MonoBehaviour
 
     private void Awake()
     {
+        reloadingDisplay.enabled = false;
+
         currentBulletAmount = maxBullets;
 
+        canShootBar.maxValue = shootingWaitTime;
         currentShootingWaitTime = canShootBar.maxValue;
+
 
         thirdPersonController = GetComponent<ThirdPersonController>();
         starterAssetInputs = GetComponent<StarterAssetsInputs>();
     }
     void Update()
     {
+        
+
         #region Aiming
         Vector3 mouseWorldPosition = Vector3.zero;
         Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
@@ -80,6 +87,10 @@ public class ThirdPersonShooterController : MonoBehaviour
             thirdPersonController.SetCameraSensitivity(aimCameraSensitivity);
             thirdPersonController.SetRotationOnMove(false);
 
+            thirdPersonController.currentSprintSpeed = thirdPersonController.aimingSprintSpeed;
+            thirdPersonController.currentMoveSpeed = thirdPersonController.aimingMoveSpeed;
+
+
             Vector3 worldAimTarget = mouseWorldPosition;
             worldAimTarget.y = transform.position.y;
             Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
@@ -90,7 +101,17 @@ public class ThirdPersonShooterController : MonoBehaviour
         {
             aimVirtualCamera.gameObject.SetActive (false);
             thirdPersonController.SetCameraSensitivity (normalCameraSensitivity);
-            thirdPersonController.SetRotationOnMove(true);
+            thirdPersonController.SetRotationOnMove(false);
+
+            thirdPersonController.currentSprintSpeed = thirdPersonController.sprintSpeed;
+            thirdPersonController.currentMoveSpeed = thirdPersonController.moveSpeed;
+
+            Vector3 worldAimTarget = mouseWorldPosition;
+            worldAimTarget.y = transform.position.y;
+            Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
+
+            transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
+
         }
         #endregion 
 
@@ -100,12 +121,11 @@ public class ThirdPersonShooterController : MonoBehaviour
         {
             canShoot = false;
         }
-        if (Input.GetKeyDown(KeyCode.R) && isShooting == false)// temperary
+        if (Input.GetKeyDown(KeyCode.R) && isShooting == false && canReload == true && currentBulletAmount < maxBullets)// temperary
         {
-            currentBulletAmount = maxBullets; // Add loading time to do this
-            canShoot = true;
+            
 
-            starterAssetInputs.shoot = false;
+            StartCoroutine(TimeToReload());
         }
 
         if  (starterAssetInputs.shoot && canFire)
@@ -176,6 +196,23 @@ public class ThirdPersonShooterController : MonoBehaviour
         yield return new WaitForSeconds(shootingWaitTime);
         canShoot = true;
         Debug.Log("Can shoooot");
+    }
+
+    private IEnumerator TimeToReload()
+    {
+        canReload = false;
+
+        reloadingDisplay.text = ("Reloading");
+        reloadingDisplay.enabled = true;
+
+        yield return new WaitForSeconds(reloadTime);
+
+        reloadingDisplay.enabled = false;
+        currentBulletAmount = maxBullets;
+        canShoot = true;
+        starterAssetInputs.shoot = false;
+
+        canReload = true;
     }
     
 }
