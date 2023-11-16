@@ -10,7 +10,13 @@ public class EnemyAI : MonoBehaviour
     float distanceToTarget = Mathf.Infinity;
     bool isProvoked = false;
 
+    [SerializeField] Collider explotionArea;
+    [SerializeField] Transform explotionParticle;
+
+    [SerializeField] float damageAmount = 4;
+
     NavMeshAgent navMeshAgent;
+    PlayerHealth playerHealth;
 
     void Awake()
     {
@@ -52,13 +58,20 @@ public class EnemyAI : MonoBehaviour
     void AttackTarget()
     {
         Debug.Log(name + " is attacking " + target.name);
+
+        Instantiate(explotionParticle, transform.position, Quaternion.identity);
+        explotionArea.enabled = true;
+        
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (!other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
-         
+            playerHealth = other.GetComponent<PlayerHealth>();
+            playerHealth.Damage(damageAmount);
+            Debug.Log("Youve been hit dude");
+            Destroy(gameObject);
         }
     }
    
