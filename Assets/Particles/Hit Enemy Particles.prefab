@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6769518720098967388}
   - component: {fileID: 8652129914875519814}
   m_Layer: 0
-  m_Name: Red Particles
+  m_Name: Hit Enemy Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

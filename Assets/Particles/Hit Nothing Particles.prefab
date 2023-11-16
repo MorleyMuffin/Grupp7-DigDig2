@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2431488620236388779}
   - component: {fileID: 6068635894645822017}
   m_Layer: 0
-  m_Name: Green Particles
+  m_Name: Hit Nothing Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
