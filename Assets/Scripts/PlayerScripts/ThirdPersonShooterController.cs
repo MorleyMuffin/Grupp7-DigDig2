@@ -29,8 +29,6 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] bool isShooting = false;
     [SerializeField] float shootingTimer = 0.0f;
 
-    [SerializeField] bool canFire = true; // erm isnt this just the same thing as canShoot?
-
     [SerializeField] float reloadTime = 1.5f;
     private bool canReload = true;
     [SerializeField] TextMeshProUGUI reloadingDisplay; // Temporary until sound and animation is added to indicate that reloading is happening.
@@ -123,12 +121,10 @@ public class ThirdPersonShooterController : MonoBehaviour
         }
         if (starterAssetInputs.reload == true && isShooting == false && canReload == true && currentBulletAmount < maxBullets)// temperary
         {
-            
-
             StartCoroutine(TimeToReload());
         }
 
-        if  (starterAssetInputs.shoot && canFire)
+        if  (starterAssetInputs.shoot )
         {
             if (canShoot == true)
             {
@@ -155,7 +151,7 @@ public class ThirdPersonShooterController : MonoBehaviour
                 StartCoroutine(TimeUntilCanShoot());
 
                // canShoot = false;
-               canFire = false;
+          
             }
         }
         bulletDisplay.text = ($"bullets {currentBulletAmount}");
@@ -177,8 +173,8 @@ public class ThirdPersonShooterController : MonoBehaviour
             {
                 isShooting = false;  // Reset shooting flag
 
-                //canShoot = true;
-                canFire = true;
+                canShoot = true;
+               
             }
         }
 
@@ -193,8 +189,13 @@ public class ThirdPersonShooterController : MonoBehaviour
     {
         canShoot = false;
         Debug.Log("Cant shoott");
+        canReload = false;
+
+        starterAssetInputs.reload = false;
+
         yield return new WaitForSeconds(shootingWaitTime);
         canShoot = true;
+        canReload = true;
         Debug.Log("Can shoooot");
     }
 
@@ -202,6 +203,7 @@ public class ThirdPersonShooterController : MonoBehaviour
     {
         canReload = false;
         starterAssetInputs.reload = false;
+        canShoot = false;
 
         reloadingDisplay.text = ("Reloading");
         reloadingDisplay.enabled = true;
