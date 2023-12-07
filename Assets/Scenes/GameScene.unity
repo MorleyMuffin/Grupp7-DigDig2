@@ -1121,14 +1121,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerAimCamera
       objectReference: {fileID: 0}
-    - target: {fileID: 2070925441746177671, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.7
@@ -1174,28 +1166,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2087105450}
     - target: {fileID: 2070925441746177913, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
-      propertyPath: m_Priority
-      value: 20
-      objectReference: {fileID: 0}
+      propertyPath: m_LookAt
+      value: 
+      objectReference: {fileID: 331491640}
     - target: {fileID: 2070925441746177913, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
-      propertyPath: m_Lens.FieldOfView
-      value: 30
+      propertyPath: m_Priority
+      value: 339
       objectReference: {fileID: 0}
-    - target: {fileID: 2070925442191277752, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
-      propertyPath: CameraSide
+    - target: {fileID: 2561821370545364273, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
+      propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2070925442191277752, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
-      propertyPath: CameraDistance
-      value: 2.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2070925442191277752, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
-      propertyPath: ShoulderOffset.x
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2070925442191277752, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
-      propertyPath: ShoulderOffset.y
-      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1944,14 +1924,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerFollowCamera
       objectReference: {fileID: 0}
-    - target: {fileID: 2070925441746177671, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.7
@@ -1962,7 +1934,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.392
+      value: -0.79200006
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1997,20 +1969,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2087105450}
     - target: {fileID: 2070925441746177913, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
+      propertyPath: m_LookAt
+      value: 
+      objectReference: {fileID: 331491640}
+    - target: {fileID: 2070925441746177913, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
+      propertyPath: m_Priority
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2070925441746177913, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
+      propertyPath: m_Lens.FieldOfView
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561821370545364273, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
       propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2070925442191277752, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
-      propertyPath: CameraSide
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2070925442191277752, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
-      propertyPath: ShoulderOffset.x
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2070925442191277752, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
-      propertyPath: ShoulderOffset.y
-      value: 0.25
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2613,7 +2585,7 @@ GameObject:
   - component: {fileID: 1463355610}
   - component: {fileID: 1463355609}
   - component: {fileID: 1463355608}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2661,7 +2633,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 6271573414225017425, guid: 4897cc67a45bc6744a9a2cd50547f60b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4345,33 +4317,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 37692724}
     - target: {fileID: 3522389850052571234, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      propertyPath: canShoot
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3522389850052571234, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3522389850052571234, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      propertyPath: vfxHitRed
-      value: 
-      objectReference: {fileID: 9100285128778726760, guid: bc1a3c472ae2054479f39281361a477a, type: 3}
-    - target: {fileID: 3522389850052571234, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: canShootBar
       value: 
       objectReference: {fileID: 1879424690}
     - target: {fileID: 3522389850052571234, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      propertyPath: vfxHitGreen
-      value: 
-      objectReference: {fileID: 5313164091610483676, guid: 3af6b52e544fa0241a8a92773f480d9c, type: 3}
-    - target: {fileID: 3522389850052571234, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: bulletDisplay
       value: 
       objectReference: {fileID: 1612081804}
-    - target: {fileID: 3522389850052571234, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      propertyPath: shootingTimer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3522389850052571234, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: debugTransform
       value: 
@@ -4384,18 +4336,6 @@ PrefabInstance:
       propertyPath: reloadingDisplay
       value: 
       objectReference: {fileID: 954878963}
-    - target: {fileID: 3522389850052571234, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      propertyPath: shootingWaitTime
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3522389850052571234, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      propertyPath: normalCameraSensitivity
-      value: 350
-      objectReference: {fileID: 0}
-    - target: {fileID: 3522389850052571234, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      propertyPath: aimColliderLayerMask.m_Bits
-      value: 65
-      objectReference: {fileID: 0}
     - target: {fileID: 3893294197879345259, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4440,40 +4380,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerArmature
       objectReference: {fileID: 0}
-    - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      propertyPath: MoveSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      propertyPath: moveSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      propertyPath: SprintSpeed
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      propertyPath: sprintSpeed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      propertyPath: aimingMoveSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      propertyPath: GroundLayers.m_Bits
-      value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 4416926081852918493, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5885216827943657505, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
