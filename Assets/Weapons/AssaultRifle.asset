@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1226b6b330a8c842807047ad8bad97a, type: 3}
+  m_Name: AssaultRifle
+  m_EditorClassIdentifier: 
+  normalWeaponSensitivity: 350
+  zoomedWeaponSensitivity: 50
+  weaponDamage: 1
+  weaponWaitTime: 0.2
+  weaponReloadTime: 1.4
+  weaponAmmoAmount: 25
+  weaponShootingVFX: {fileID: 0}
+  onHitParticles: {fileID: 0}
+  onMissParticles: {fileID: 0}
