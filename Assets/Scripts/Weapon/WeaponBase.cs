@@ -6,16 +6,16 @@ using UnityEngine;
 public class WeaponBase : ScriptableObject//MonoBehaviour
 {
     [Header("Sensitivity")]
-    [SerializeField] float normalWeaponSensitivity = 350f;
-    [SerializeField] float zoomedWeaponSensitivity = 50f;
+    public float normalWeaponSensitivity = 350f;
+    public float zoomedWeaponSensitivity = 50f;
 
     [Header("Weapon Shooting")]
-    [SerializeField] float weaponDamage = 1f;
+    public float weaponDamage = 1f;
 
-    [SerializeField] float weaponWaitTime = 0.2f;
-    [SerializeField] float weaponReloadTime = 1.4f;
+    public float weaponWaitTime = 0.2f;
+    public float weaponReloadTime = 1.4f;
 
-    [SerializeField] float weaponAmmoAmount = 25f;
+    public int weaponAmmoAmount = 25;
 
     [SerializeField] ParticleSystem weaponShootingVFX;
     [SerializeField] ParticleSystem onHitParticles;
