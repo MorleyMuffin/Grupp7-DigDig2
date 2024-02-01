@@ -8,6 +8,8 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] float enemyCurrentHealth;
 
     [SerializeField] bool canTakeDamage = true;
+
+    [SerializeField] Transform explotionAudio;
     void Start()
     {
         enemyCurrentHealth = enemyMaxHealth;
@@ -17,6 +19,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if(enemyCurrentHealth <= 0)
         {
+            Instantiate(explotionAudio, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

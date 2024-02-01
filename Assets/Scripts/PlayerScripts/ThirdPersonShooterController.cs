@@ -48,6 +48,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 
     private EnemyHealth enemyHealth;
 
+    [SerializeField] AudioSource shootingAudio;
     private void Awake()
     {
         reloadingDisplay.enabled = false;
@@ -134,6 +135,7 @@ public class ThirdPersonShooterController : MonoBehaviour
         {
             if (canShoot == true)
             {
+                shootingAudio.Play();
                 isShooting = true;
                 shootingTimer = 0.0f;
                 canShoot = false;
