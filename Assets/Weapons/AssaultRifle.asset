@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1226b6b330a8c842807047ad8bad97a, type: 3}
   m_Name: AssaultRifle
   m_EditorClassIdentifier: 
-  normalWeaponSensitivity: 350
-  zoomedWeaponSensitivity: 50
-  weaponDamage: 1
-  weaponWaitTime: 0.2
-  weaponReloadTime: 1.4
-  weaponAmmoAmount: 25
+  normalWeaponSensitivity: 100
+  zoomedWeaponSensitivity: 40
+  weaponDamage: 3
+  weaponWaitTime: 0.4
+  weaponReloadTime: 2
+  weaponAmmoAmount: 40
   weaponShootingVFX: {fileID: 0}
   onHitParticles: {fileID: 0}
   onMissParticles: {fileID: 0}

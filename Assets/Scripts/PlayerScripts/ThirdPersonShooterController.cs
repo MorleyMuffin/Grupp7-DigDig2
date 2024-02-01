@@ -13,28 +13,28 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera aimVirtualCamera;
 
     [Header("Sensitivity + else")]
-    [SerializeField] private float normalCameraSensitivity;
-    [SerializeField] private float aimCameraSensitivity;
+    public float normalCameraSensitivity;
+    public float aimCameraSensitivity;
 
     [SerializeField] private LayerMask aimColliderLayerMask = new LayerMask();
     [SerializeField] private Transform debugTransform;
 
     [Header("Shooting")]
-    [SerializeField] private float weaponDamage = 3f;
+    public float weaponDamage = 3f;
 
-    [SerializeField] float shootingWaitTime = 1f;
-    [SerializeField] float currentShootingWaitTime;
-    [SerializeField] bool canShoot = true;
+    public float shootingWaitTime = 1f;
+    private float currentShootingWaitTime;
+    public bool canShoot = true;
 
     [SerializeField] bool isShooting = false;
     [SerializeField] float shootingTimer = 0.0f;
 
-    [SerializeField] float reloadTime = 1.5f;
+    public float reloadTime = 1.5f;
     private bool canReload = true;
     [SerializeField] TextMeshProUGUI reloadingDisplay; // Temporary until sound and animation is added to indicate that reloading is happening.
 
-    [SerializeField] int maxBullets = 10;
-    [SerializeField] int currentBulletAmount;
+    public int maxBullets = 10;
+    public int currentBulletAmount;
     [SerializeField] TextMeshProUGUI bulletDisplay; // Change to show x amount of bullets instead of text    
 
     [SerializeField] Slider canShootBar;
@@ -63,8 +63,14 @@ public class ThirdPersonShooterController : MonoBehaviour
     }
     void Update()
     {
-        
+        canShootBar.maxValue = shootingWaitTime;
+        currentShootingWaitTime = canShootBar.maxValue;
 
+        AimingAndShooting();
+    }
+
+    private void AimingAndShooting()
+    {
         #region Aiming
         Vector3 mouseWorldPosition = Vector3.zero;
         Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
@@ -76,10 +82,10 @@ public class ThirdPersonShooterController : MonoBehaviour
             debugTransform.position = raycastHit.point;
             mouseWorldPosition = raycastHit.point;
 
-            hitTransform = raycastHit.transform;  
+            hitTransform = raycastHit.transform;
         }
 
-        if ( starterAssetInputs.aim == true) 
+        if (starterAssetInputs.aim == true)
         {
             aimVirtualCamera.gameObject.SetActive(true);
             thirdPersonController.SetCameraSensitivity(aimCameraSensitivity);
@@ -93,12 +99,12 @@ public class ThirdPersonShooterController : MonoBehaviour
             worldAimTarget.y = transform.position.y;
             Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
 
-            transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f); 
+            transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
         }
         else
         {
-            aimVirtualCamera.gameObject.SetActive (false);
-            thirdPersonController.SetCameraSensitivity (normalCameraSensitivity);
+            aimVirtualCamera.gameObject.SetActive(false);
+            thirdPersonController.SetCameraSensitivity(normalCameraSensitivity);
             thirdPersonController.SetRotationOnMove(false);
 
             thirdPersonController.currentSprintSpeed = thirdPersonController.sprintSpeed;
@@ -124,19 +130,20 @@ public class ThirdPersonShooterController : MonoBehaviour
             StartCoroutine(TimeToReload());
         }
 
-        if  (starterAssetInputs.shoot )
+        if (Input.GetButton("Fire1"))//if  (starterAssetInputs.shoot == true )
         {
             if (canShoot == true)
             {
                 isShooting = true;
                 shootingTimer = 0.0f;
+                canShoot = false;
 
                 if (hitTransform != null)
                 {
                     if (hitTransform.GetComponent<EnemyHealth>() != null)
                     {
-                        Instantiate(vfxHitRed, raycastHit.point, Quaternion.identity); 
-                        enemyHealth = hitTransform.GetComponent<EnemyHealth>(); 
+                        Instantiate(vfxHitRed, raycastHit.point, Quaternion.identity);
+                        enemyHealth = hitTransform.GetComponent<EnemyHealth>();
                         enemyHealth.DamageToEnemy(weaponDamage);
                     }
                     else
@@ -147,11 +154,12 @@ public class ThirdPersonShooterController : MonoBehaviour
 
                 currentBulletAmount--;
 
-                starterAssetInputs.shoot = false;
+                // starterAssetInputs.shoot = false;
+
                 StartCoroutine(TimeUntilCanShoot());
 
-               // canShoot = false;
-          
+
+
             }
         }
         bulletDisplay.text = ($"bullets {currentBulletAmount}");
@@ -164,25 +172,25 @@ public class ThirdPersonShooterController : MonoBehaviour
             // Calculate the interpolation factor (0 to 1)
             float t = Mathf.Clamp01(shootingTimer / shootingWaitTime);
 
-            // Interpolate the value using SmoothStep (you can also use Lerp)
+            // Interpolate the value using SmoothStep
             currentShootingWaitTime = Mathf.SmoothStep(0.0f, shootingWaitTime, t);
 
-            starterAssetInputs.shoot = false;
-            // Check if shooting time has reached the max
+            // Trying to get rapid fire. This makes it not shoot if clicking shoot while shootwaiting
+            // starterAssetInputs.shoot = false;
+            canShoot = false;
+
+            // Check if shooting time has reached the max. Also I does not seem to be that necessary 
             if (shootingTimer >= shootingWaitTime)
             {
                 isShooting = false;  // Reset shooting flag
 
-                canShoot = true;
-               
             }
         }
 
 
         canShootBar.value = currentShootingWaitTime;
-        
-        #endregion
 
+        #endregion
     }
 
     private IEnumerator TimeUntilCanShoot()  
@@ -213,7 +221,7 @@ public class ThirdPersonShooterController : MonoBehaviour
         reloadingDisplay.enabled = false;
         currentBulletAmount = maxBullets;
         canShoot = true;
-        starterAssetInputs.shoot = false;
+        //starterAssetInputs.shoot = false;
 
         canReload = true;
     }

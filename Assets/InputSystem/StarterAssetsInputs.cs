@@ -24,7 +24,10 @@ namespace StarterAssets
 		public bool cursorInputForLook = true;
 
 #if ENABLE_INPUT_SYSTEM
-		public void OnMove(InputValue value)
+
+
+
+        public void OnMove(InputValue value)
 		{
 			MoveInput(value.Get<Vector2>());
 		}
@@ -81,7 +84,9 @@ namespace StarterAssets
 		public void SprintInput(bool newSprintState)
 		{
 			sprint = newSprintState;
-		}		public void AimInput(bool newAimState)
+		}		
+		
+		public void AimInput(bool newAimState)
 		{
 			aim = newAimState;
 		}
