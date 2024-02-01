@@ -1,4 +1,5 @@
-﻿ using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
 #endif
@@ -14,6 +15,10 @@ namespace StarterAssets
 #endif
     public class ThirdPersonController : MonoBehaviour
     {
+        //TEMP Jump audio
+       [SerializeField] AudioSource audioSource;
+        bool canPlayAudio = true;
+
         [Header("Player")]
         [Tooltip("Move speed of the character in m/s")]
         public float currentMoveSpeed;
@@ -137,6 +142,7 @@ namespace StarterAssets
             {
                 _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
             }
+            audioSource = GetComponent<AudioSource>();
         }
 
         private void Start()
@@ -316,10 +322,11 @@ namespace StarterAssets
                 {
                     // the square root of H * -2 * G = how much velocity needed to reach desired height
                     _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
-
+                 
                     // update animator if using character
                     if (_hasAnimator)
                     {
+                        
                         _animator.SetBool(_animIDJump, true);
                     }
                 }
@@ -345,6 +352,10 @@ namespace StarterAssets
                     // update animator if using character
                     if (_hasAnimator)
                     {
+                        if (canPlayAudio == true)
+                        {
+                            StartCoroutine(PlayJumpSound());
+                        }
                         _animator.SetBool(_animIDFreeFall, true);
                     }
                 }
@@ -360,6 +371,16 @@ namespace StarterAssets
             }
         }
 
+        private IEnumerator PlayJumpSound()
+        {
+            
+            audioSource.Play();
+            canPlayAudio = false;
+
+            yield return new WaitForSeconds(.5f);
+            canPlayAudio = true;
+
+        }
         private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
         {
             if (lfAngle < -360f) lfAngle += 360f;

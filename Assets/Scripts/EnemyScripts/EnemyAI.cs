@@ -12,6 +12,7 @@ public class EnemyAI : MonoBehaviour
 
     [SerializeField] Collider explotionArea;
     [SerializeField] Transform explotionParticle;
+    [SerializeField] Transform explotionAudio;
 
     [SerializeField] float damageAmount = 4;
 
@@ -60,8 +61,10 @@ public class EnemyAI : MonoBehaviour
         Debug.Log(name + " is attacking " + target.name);
 
         Instantiate(explotionParticle, transform.position, Quaternion.identity);
+
         explotionArea.enabled = true;
-        
+        Instantiate(explotionAudio, transform.position, Quaternion.identity);
+
     }
 
     void OnTriggerEnter(Collider other)

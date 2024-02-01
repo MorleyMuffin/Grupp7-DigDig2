@@ -27,7 +27,7 @@ public class WeaponSwitching : MonoBehaviour
         parentShootingScript.currentBulletAmount = weapon0CurrentAmmoAmount;
 
    
-        ChangeToNewShootingValues();
+        //ChangeToNewShootingValues();
 
 
     }
@@ -153,7 +153,6 @@ public class WeaponSwitching : MonoBehaviour
 
     void ChangeToNewShootingValues()
     {
-
             parentShootingScript.normalCameraSensitivity = currentWeapon.normalWeaponSensitivity;
             parentShootingScript.aimCameraSensitivity = currentWeapon.zoomedWeaponSensitivity;
             parentShootingScript.weaponDamage = currentWeapon.weaponDamage;

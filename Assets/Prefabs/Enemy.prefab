@@ -53,6 +53,8 @@ MonoBehaviour:
   chaseRange: 15
   explotionArea: {fileID: 492841121455099920}
   explotionParticle: {fileID: 9100285128778726760, guid: 752bf605b1e67454283b1f2b8aa96f04, type: 3}
+  explotionAudio: {fileID: 27287682801224885, guid: c902a0bbc5816644cb78d9cfafca152d, type: 3}
+  damageAmount: 4
 --- !u!136 &8777875676135778789
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -113,6 +115,7 @@ MonoBehaviour:
   enemyMaxHealth: 5
   enemyCurrentHealth: 0
   canTakeDamage: 1
+  explotionAudio: {fileID: 27287682801224885, guid: c902a0bbc5816644cb78d9cfafca152d, type: 3}
 --- !u!65 &492841121455099920
 BoxCollider:
   m_ObjectHideFlags: 0
