@@ -34,12 +34,4 @@ public class PlayerHealth : MonoBehaviour
             currentHealth = currentHealth - damage;
         }
     }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (!other.gameObject.CompareTag("Enemies"))
-        {
-           
-        }
-    }
 }

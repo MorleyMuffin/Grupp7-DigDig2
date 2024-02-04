@@ -20,11 +20,6 @@ public class Checkpoint : MonoBehaviour
         Debug.Log(LastCheckpointPosition);
     }
 
-    private void Update()
-    {
-        Debug.Log(LastCheckpointPosition);
-    }
-
 
     void OnTriggerEnter(Collider other)
     {
@@ -36,7 +31,6 @@ public class Checkpoint : MonoBehaviour
 
         //TODO: Play checkpoint sound and particle effect!
     }
-
 
     void OnDrawGizmos()
     {

@@ -54,16 +54,14 @@ public class EnemyAI : MonoBehaviour
         Debug.Log(name + " is attacking " + target.name);
     }
 
-    /*
     void OnTriggerEnter(Collider other)
     {
         if (!other.gameObject.CompareTag("Player"))
         {
-            
+         
         }
     }
-   */
-
+   
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

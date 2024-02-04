@@ -60,12 +60,5 @@ public class SceneManagerExtended : MonoBehaviour
 
         return buildIndex;
     }
-
-    public static void QuitGame()
-    {
-        Debug.Log("Quitting game!");
-        Application.Quit();
-    }
-
     #endregion
 }
