@@ -96,11 +96,7 @@ namespace StarterAssets
             shoot = newShootState;
         }
 
-		public void ReloadInput(bool newReloadState)
-		{
-			reload = newReloadState;
-		}
-
+		/*
         private void OnApplicationFocus(bool hasFocus)
 		{
 			SetCursorState(cursorLocked);
@@ -110,6 +106,7 @@ namespace StarterAssets
 		{
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 		}
+		*/
 	}
 	
 }
