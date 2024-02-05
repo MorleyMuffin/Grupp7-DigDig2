@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
@@ -95,6 +96,12 @@ namespace StarterAssets
         {
             shoot = newShootState;
         }
+
+		// Placeholder. Actual ReloadInput method is missing.
+		public void ReloadInput(bool newReloadState)
+		{
+			throw new NotImplementedException();
+		}
 
 		/*
         private void OnApplicationFocus(bool hasFocus)
