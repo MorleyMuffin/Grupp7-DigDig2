@@ -963,7 +963,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3344906899728444387}
   m_Layer: 0
-  m_Name: MediumRoomTallG
+  m_Name: TallRoomG5x7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
