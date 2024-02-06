@@ -1209,7 +1209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7354247823195145395}
   m_Layer: 0
-  m_Name: MediumRoomG
+  m_Name: RoomG5x7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
