@@ -407,7 +407,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3469451466908398154
 Transform:
   m_ObjectHideFlags: 0
@@ -438,11 +438,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba92580cec0c5104ba4204ff6f118d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gun: {fileID: 1606638969967662848}
-  mountPoints:
-  - {fileID: 6395434964068766044}
-  - {fileID: 2081415026786590578}
-  target: {fileID: 0}
 --- !u!114 &1606638969967662848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -868,6 +863,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba92580cec0c5104ba4204ff6f118d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gun: {fileID: 0}
-  mountPoints: []
-  target: {fileID: 0}
