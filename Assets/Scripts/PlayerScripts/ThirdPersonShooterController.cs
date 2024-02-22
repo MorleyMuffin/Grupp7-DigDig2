@@ -61,6 +61,8 @@ public class ThirdPersonShooterController : MonoBehaviour
 
         thirdPersonController = GetComponent<ThirdPersonController>();
         starterAssetInputs = GetComponent<StarterAssetsInputs>();
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
     void Update()
     {

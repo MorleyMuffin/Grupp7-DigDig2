@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
+    /*
     public Gun gun;
     public MountPoint[] mountPoints;
     public Transform target;
@@ -61,4 +62,5 @@ public class Turret : MonoBehaviour
             gun.Fire();
         }
     }
+    */
 }

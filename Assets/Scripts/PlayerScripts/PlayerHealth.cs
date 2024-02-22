@@ -23,7 +23,10 @@ public class PlayerHealth : MonoBehaviour
         healthBar.value = currentHealth;
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            Cursor.visible = false;
+            SceneManagerExtended.ReloadScene();
+            
         }
     }
 
