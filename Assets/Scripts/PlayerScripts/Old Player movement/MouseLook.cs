@@ -16,13 +16,11 @@ public class MouseLook : MonoBehaviour
         playerBody = transform.parent.transform;
     }
 
-    /*
     void Start()
     {
         //Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
-    */
 
     void Update()
     {
