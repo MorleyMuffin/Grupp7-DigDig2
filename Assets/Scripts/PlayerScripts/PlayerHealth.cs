@@ -24,7 +24,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             //Destroy(gameObject);
-            Cursor.visible = false;
+           // Cursor.visible = false;
             SceneManagerExtended.ReloadScene();
             
         }
